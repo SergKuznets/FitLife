@@ -25,7 +25,7 @@ def main():
             print('Введите свой вес в кг, например 75.5 или 75,5')
     while True:
         try:
-            user_height = float(input('Введите ctрост в м:').replace(',', '.'))
+            user_height = float(input('Введите рост в м:').replace(',', '.'))
             break
         except ValueError:
             print('Введите свой рост в м, например 1.8 или 1,8')
@@ -35,7 +35,6 @@ def main():
     water_ml = user_weight * WATER_PER_ML
     # Перевод нормы воды в литры и округление до 2 десятичных знаков
     water_l = round((water_ml / WATER_PER_L), 2)
-    print()
     return user_name, user_age, bmi, water_l
 
 
@@ -43,8 +42,8 @@ if __name__ == '__main__':
     user_name, user_age, bmi, water_l = main()
     # Финальный вывод отчёта для пользователя
     print(
-        f"Отчет для пользователя: {user_name} ({user_age} г.)\n"
-        f"Твой индекс массы тела: {bmi}\n"
-        f"Рекомендуемая норма воды: {water_l} л. в день\n\n"
-        "Расчет окончен. Будьте здоровы!",
+        f'Отчет для пользователя: {user_name} ({user_age} г.)\n\n'
+        f'Твой индекс массы тела: {bmi}\n'
+        f'Рекомендуемая норма воды: {water_l} л. в день\n\n'
+        'Расчет окончен. Будьте здоровы!',
     )
